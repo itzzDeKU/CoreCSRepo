@@ -2,6 +2,8 @@
 
 ## Inheritance
 
+- Inheritance in C++ is an Object-Oriented Programming (OOP) concept that allows one class (called the derived class) to inherit properties and behaviors (data members and member functions) from another class (called the base class). It promotes code reuse and establishes a parent-child relationship between classes.
+
 ### Single Inheritance
 
 When one class inherits another class, it is known as single level inheritance.
@@ -56,6 +58,8 @@ When one class inherits another class, it is known as single level inheritance.
     - It helps resolve ambiguity as we explicitly identify path for accessing the function.
   
   - Virtual Inheritance
+    - Syntax: ```class derived: virtual public base{}```
+    - Virtual inheritance ensures that only one copy of the common base class (Base) is inherited, regardless of how many derived classes inherit from it.
 
 ### NOTE
 
@@ -67,3 +71,7 @@ When one class inherits another class, it is known as single level inheritance.
 - Public inheritance allows the base class's public members to be accessed directly through derived class objects.
 - Protected inheritance restricts access to the base class's members to within the derived class or its subclasses.
 - Private inheritance makes the base class's public and protected members accessible only within the derived class itself and not outside.
+
+### CONS
+
+- Tight Coupling between Classes.
