@@ -22,6 +22,13 @@ The rules for the virtual functions in C++ are as follows:
 5. They are always defined in the base class and overridden in a derived class. It is not mandatory for the derived class to override (or re-define the virtual function), in that case, the base class version of the function is used.
 6. A class may have a virtual destructor but it cannot have a virtual constructor.
 
+#### Pure Virtual Functions
+
+- Syntax: ```virtual void func() = 0;```
+- Purpose: Declares a virtual function with no implementation in the base class.
+- Requirement: Every derived class must provide its own implementation of the pure virtual function.
+- Effect: Makes the base class **abstract**, meaning you cannot instantiate it directly.
+
 ### Working
 
 #### UPCASTING
@@ -51,3 +58,16 @@ The rules for the virtual functions in C++ are as follows:
 - **Virtual Functions**: Functions that can be overridden in derived classes, resolved at runtime, enabling polymorphism.
 - **Object-Based Resolution**: Calls to virtual functions are resolved using the **vptr** and the **vtable**, based on the object's actual type.
 - **Static Functions**: Cannot be virtual because they are bound at compile time, whereas virtual functions depend on the object's actual type and are bound at runtime.
+
+### Virtual Constructors and Destructors in C++
+
+- **Why Destructors Should Be Virtual**:
+  - In **runtime polymorphism**, if a destructor is **not virtual** in the base class, only the **base class destructor** is called when deleting an object through a base class pointer.
+  - This leads to **undefined behavior** or **memory leaks** because the **derived class destructor** will not be invoked, leaving the derived class resources unfreed.
+
+- **Why Constructors Can’t Be Virtual**:
+  - **Constructors** cannot be virtual because they are responsible for **initializing** the object. During construction, the **vptr** (virtual pointer) is set, but it’s only initialized **after** the constructor runs.
+  - Since **virtual functions** depend on the **vptr**, and polymorphism cannot happen until after the constructor finishes, the constructor cannot be virtual.
+
+- **Note**: The **compiler does not** automatically make destructors virtual. If you want proper cleanup in derived classes, you must declare destructors as virtual yourself.
+![Problem](image-2.png)
