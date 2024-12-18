@@ -49,3 +49,10 @@ The rules for the virtual functions in C++ are as follows:
 4. The prototype of virtual functions should be the same in the base as well as the derived class.
 5. They are always defined in the base class and overridden in a derived class. It is not mandatory for the derived class to override (or re-define the virtual function), in that case, the base class version of the function is used.
 6. A class may have a virtual destructor but it cannot have a virtual constructor.
+
+#### My Observation
+
+- Strict Abstraction:
+  - Virtual Functions in Base Class must be enforced in all derived classes. [Pure Virtual Functions].
+  - Virtual Functions : ```virtual void getArea() = 0;``` // mandatory ~ Pure Virtual Functions
+  - Virtual Functions : ```virtual void getArea(){};``` // optional ~ Not Pure Virtual Functions
