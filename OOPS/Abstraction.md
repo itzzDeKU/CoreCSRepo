@@ -56,3 +56,4 @@ The rules for the virtual functions in C++ are as follows:
   - Virtual Functions in Base Class must be enforced in all derived classes. [Pure Virtual Functions].
   - Virtual Functions : ```virtual void getArea() = 0;``` // mandatory ~ Pure Virtual Functions
   - Virtual Functions : ```virtual void getArea(){};``` // optional ~ Not Pure Virtual Functions
+- Due to upcasting, base class pointer can only access methods of base class and call dervied class function for virtual functions,

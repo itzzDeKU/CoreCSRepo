@@ -71,3 +71,5 @@ The rules for the virtual functions in C++ are as follows:
 
 - **Note**: The **compiler does not** automatically make destructors virtual. If you want proper cleanup in derived classes, you must declare destructors as virtual yourself.
 ![Problem](image-2.png)
+
+**- Go thru dynamic-cast and static_cast once.**
