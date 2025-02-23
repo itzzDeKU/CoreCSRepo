@@ -1,6 +1,6 @@
 # OOPS
 
-## CPP Interview
+## CPP Special
 
 ### Virtual Function
 
@@ -73,3 +73,4 @@ The rules for the virtual functions in C++ are as follows:
 ![Problem](image-2.png)
 
 **- Go thru dynamic-cast and static_cast once.**
+
